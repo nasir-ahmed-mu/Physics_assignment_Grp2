@@ -12,4 +12,18 @@ int main() {
         return 0;
     }
 
-   
+   printf("Enter angle (in degrees): ");
+    scanf("%lf", &theta_deg);
+
+    printf("Enter slit distance d (in micrometers): ");
+    scanf("%lf", &d);
+
+    theta_rad = theta_deg * M_PI / 180.0;
+    d *= 1e-6;
+    lambda *= 1e-9;
+
+    m = (d * sin(theta_rad)) / lambda;
+    printf("%.0lf-th order maxima\n", round(m));
+
+    return 0;
+}
